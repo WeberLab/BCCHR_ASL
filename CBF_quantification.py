@@ -35,11 +35,11 @@ SaturationTime = 2
 # Relaxation time of tissue
 T1t = 1.2
 #Post labeling delay
-PLD = 2025
+PLD = 2.025
 # T1 of blood
 T1b = None #replace with calculations via hematocrit
 # Labeling duration
-LabelDuration = 1450
+LabelDuration = 1.450
 # Partition coefficient (whole brain average)
 Lambda = 0.9
 # Labeling efficiency (average of inversion efficiency and background efficiency)
