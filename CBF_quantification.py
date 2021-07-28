@@ -37,7 +37,7 @@ T1t = 1.2
 #Post labeling delay
 PLD = 2025
 # T1 of blood
-T1b = 1.2
+T1b = None #replace with calculations via hematocrit
 # Labeling duration
 LabelDuration = 1450
 # Partition coefficient (whole brain average)
