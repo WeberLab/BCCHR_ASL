@@ -8,9 +8,9 @@ from nibabel.viewers import OrthoSlicer3D
 SHOW = False
 
 # Change filepath
-PW_filename = 'D:/Anna/orange_data/ASL/005_raw_3D_Ax_ASL_20210513145543.nii.gz'
-PD_filename = 'D:/Anna/orange_data/ASL/005_raw_3D_Ax_ASL_20210513145543a.nii.gz'
-save_file = 'D:/Anna/orange_data/ASL/CBF_map.nii.gz'
+PW_filename = '[absolute PW filepath].nii.gz'
+PD_filename = '[absolute PD filepath].nii.gz'
+save_file = '[absolute save filepath].nii.gz'
 
 # Load NIFTI
 PD_data = nib.load(PD_filename)
