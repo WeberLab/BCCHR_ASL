@@ -1,16 +1,44 @@
+#!python
+
+import argparse
+import nibabel as nib
+from nibabel.viewers import OrthoSlicer3D
+
 import matplotlib
 matplotlib.use('TkAgg')
 from matplotlib import pylab as plt
 import numpy as np
-import nibabel as nib
-from nibabel.viewers import OrthoSlicer3D
 
-SHOW = False
+# Initialize parser and parse arguments
+parser = argparse.ArgumentParser()
+parser.add_argument(
+	"-pw",
+	type=str,
+	help="PW file name (full path)",
+	required=True
+)
+parser.add_argument(
+	"-pd",
+	type=str,
+	help="PD file name (full path)",
+	required=True
+)
+parser.add_argument(
+	"-o",
+	type=str,
+	help="save file name (full path)",
+	required=True
+)
+
+args = parser.parse_args()
+
+
+SHOW = True
 
 # Change filepath
-PW_filename = '[absolute PW filepath].nii.gz'
-PD_filename = '[absolute PD filepath].nii.gz'
-save_file = '[absolute save filepath].nii.gz'
+PW_filename = args.pw
+PD_filename = args.pd
+save_file = args.o
 
 # Load NIFTI
 PD_data = nib.load(PD_filename)
@@ -68,4 +96,5 @@ img = nib.Nifti1Image(cbf, PW_data.affine, PW_data.header)
 nib.save(img, save_file)
 
 # Show CBF map
+# Will generate error, please ignore
 OrthoSlicer3D(cbf).show()
