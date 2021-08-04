@@ -83,7 +83,7 @@ antsApplyTransforms \
   -t [${mat}, 1] \
   -o ${mask_in_pd}
 
-fslmaths mask_warped_in_pd.nii.gz -thr 1 -bin mask_warped_in_pd_binary
+fslmaths ${out}/mask_warped_in_pd.nii.gz -thr 1 -bin ${out}/mask_warped_in_pd_binary
 
 echo "Creating GM Mask
 "
