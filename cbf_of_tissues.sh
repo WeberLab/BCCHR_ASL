@@ -93,10 +93,10 @@ fslmaths ${out}/mask_warped_in_pd.nii.gz -thr 1 -bin ${out}/mask_warped_in_pd_bi
 echo "Registering Tissue Masks to PD
 "
 
-maindir=/mnt/Data/AnnaTmpFolder/
+maindir=$PWD
 cd $maindir
 
-maskdir=${maindir}derivatives/dhcp/sub-${subid}/ses-${sesid}/masks
+maskdir=${maindir}/derivatives/dhcp/sub-${subid}/ses-${sesid}/masks
 
 mask_resample=${maskdir}/csf.nii.gz
 flirt -in ${maskdir}/csf.nii.gz -ref ${t2} -out ${mask_resample} -applyxfm
